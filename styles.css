@@ -1,0 +1,64 @@
+body{
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+  min-height: 100vh;
+}
+
+header{
+  height: auto;
+  background-color:#C0504D;
+  color:white;
+  text-align: center;
+  font-size: 2em;
+  border: 1px black solid;
+  padding: 0;
+  margin: 0;
+}
+
+.button-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 200px 200px 200px;
+  grid-template-areas:
+    "header header header"
+    "button button button"
+    "button button button"
+    "footer footer footer"
+}
+
+.button-info{
+  grid-area: header;
+  text-align: center;
+  line-height: 10px;
+  font-size:
+}
+
+.btn {
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  background-color: gray;
+  border: 1px solid darkGray;
+  color: white;
+  padding: 12px 16px;
+  font-size: 1.3em;
+  cursor: pointer;
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+footer{
+  grid-area: footer;
+  margin-top: auto;
+  background-color: #C0504D;
+  text-align: center;
+  width: auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  line-height: auto;
+}
