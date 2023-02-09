@@ -57,7 +57,7 @@ body, .page-head{
 
 .top-buttons-container {
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(0,0,15,1) 25%, rgba(94,6,145,1));
+  background-image: linear-gradient(to bottom, rgba(0,0,15,1) 15%, rgba(0,0,15,0.5) 10%, #004e92);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -70,6 +70,16 @@ body, .page-head{
   margin: 0;
   padding: 0;
   -webkit-text-stroke: 3px black;
+}
+
+@media only screen and (max-width: 1361px) {
+  .page-head-name {
+    font-size: 8rem;
+  }
+
+  .buttons-title {
+    font-size: 6rem!important;
+  }
 }
 
 .top-buttons-container h3{
@@ -89,8 +99,95 @@ body, .page-head{
   row-gap: 2rem;
 }
 
+.card {
+  border: 0.4vmin solid black;
+  cursor: pointer;
+  width: 20rem;
+  height: 18rem;
+  position: relative;
+}
+
+.card-content{
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.2) 8%,
+    transparent 8%
+    );
+  background-position: 0% 0%;
+  background-size: 2vmin 2vmin;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.card-content i, .card-content.card-text{
+    padding-top: 25%;
+}
+
+.card-text{
+  color: white;
+  position: relative;
+  transform: translateY(40%);
+  transition: transform 200ms linear;
+  opacity: 0;
+  z-index: 2;
+}
+
+.card-content:hover .card-text{
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 200ms linear;
+}
+
+.card:hover:before .card-text {
+  z-index: 2;
+}
+
+
+.card:before{
+  background: linear-gradient(130deg,
+    transparent 0% 33%,
+    #c0392b,
+    #8e44ad);
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  transition: background-position 350ms ease, transform 350ms ease;
+}
+
+.card:hover:before{
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+    z-index: 1;
+}
+
+@media only screen and (max-width: 1361px) {
+  .top-buttons {
+    grid-template-columns: 12rem 12rem 12rem;
+    grid-template-rows: 11rem 11rem;
+  }
+
+  .top-buttons-container h3 {
+    font-size: 70%;
+  }
+
+  .card {
+    width: 14rem;
+    height: 12rem;
+  }
+
+  .card-content i{
+    font-size: 300%;
+  }
+}
+
 .about {
-  background-image: linear-gradient(to bottom, rgba(94,6,145,1) 25%, rgba(94,6,145,1));
+  background-image: linear-gradient(to bottom, #004e92, rgba(94,6,145,1));
   margin: 0;
   display: flex;
   align-items: center;
