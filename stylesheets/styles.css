@@ -12,6 +12,12 @@ body, .page-head{
   color: white;
 }
 
+@font-face {
+  font-family: 'Kanit';
+  src: url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;500&display=swap');
+  font-display: swap;
+}
+
 .page-head{
   background-image: url("../images/IMG_20230208_171238.jpg");
   background-size: cover;
@@ -66,7 +72,7 @@ body, .page-head{
 
 .buttons-title {
   font-weight: 500;
-  font-size: 8rem;
+  font-size: 7rem;
   margin: 0;
   padding: 0;
   -webkit-text-stroke: 3px black;
@@ -74,11 +80,11 @@ body, .page-head{
 
 @media only screen and (max-width: 1361px) {
   .page-head-name {
-    font-size: 8rem;
+    font-size: 6rem;
   }
 
   .buttons-title {
-    font-size: 6rem!important;
+    font-size: 5rem!important;
   }
 }
 
@@ -93,17 +99,17 @@ body, .page-head{
   width: auto;
   display: grid;
   margin: auto;
-  grid-template-columns: 20rem 20rem 20rem;
-  grid-template-rows: 18rem 18rem;
-  column-gap: 4rem;
+  grid-template-columns: 18rem 18rem 18rem;
+  grid-template-rows: 16rem 16rem;
+  column-gap: 3rem;
   row-gap: 2rem;
 }
 
 .card {
   border: 0.4vmin solid black;
   cursor: pointer;
-  width: 20rem;
-  height: 18rem;
+  width: 16rem;
+  height: 16rem;
   position: relative;
   text-decoration: none;
   color: #5b2be0;
@@ -188,6 +194,24 @@ body, .page-head{
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .top-buttons-container {
+    padding-bottom: 3rem;
+  }
+
+  .top-buttons {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .card {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+
 .about {
   background-image: linear-gradient(to bottom, #004e92, rgba(94,6,145,1));
   margin: 0;
@@ -244,4 +268,99 @@ body, .page-head{
 
 .quote{
   color: #657581;
+}
+
+.cv {
+  background-image: linear-gradient(to bottom, rgba(94,6,145,1), rgba(126,43,250,1));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cv-content{
+    width: 70%;
+}
+
+.cv p{
+  margin: auto;
+  margin-top: 0;
+  text-align: left;
+}
+
+.cv a{
+  text-decoration: none;
+  color: navy;
+}
+
+.standalone-card {
+    display: inline-block;
+    border: 0.4vmin solid black;
+    cursor: pointer;
+    width: 16rem;
+    height: 14rem;
+    position: relative;
+    left: 40%;
+    text-decoration: none;
+    color: #5b2be0;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.standalone-card-content {
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.2) 8%,
+        transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 2vmin 2vmin;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.standalone-card-content i, .standalone-card-content.standalone-card-text{
+    padding-top: 25%;
+}
+
+.standalone-card-text {
+    color: white;
+    position: relative;
+    transform: translateY(40%);
+    transition: transform 200ms linear, opacity 200ms linear;
+    opacity: 0;
+    z-index: 2;
+}
+
+.standalone-card-content:hover .standalone-card-text{
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 200ms linear;
+}
+
+.standalone-card:before {
+    background: linear-gradient(130deg,
+        transparent 0% 33%,
+        #c0392b,
+        #8e44ad);
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    transition: background-position 350ms ease, transform 350ms ease;
+}
+
+.standalone-card:hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+    z-index: 1;
 }
